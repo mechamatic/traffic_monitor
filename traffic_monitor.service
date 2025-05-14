@@ -4,12 +4,12 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/traffic_monitor.sh <NetworkInterface> <LogUser>
+ExecStart=/usr/local/bin/traffic_monitor.sh <NetworkInterface> pi
 Restart=always
 User=root
 # Use ExecStartPre to create logs directory owned by <LogUser>
-ExecStartPre=/bin/mkdir -p /home/<LogUser>/traffic_logs
-ExecStartPre=/bin/chown -R <LogUser>:<LogUser> /home/<LogUser>/traffic_logs
+ExecStartPre=/bin/mkdir -p /home/pi/traffic_logs
+ExecStartPre=/bin/chown -R pi:pi /home/pi/traffic_logs
 
 [Install]
 WantedBy=multi-user.target
