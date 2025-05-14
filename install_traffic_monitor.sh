@@ -14,7 +14,7 @@ echo "Updating package lists..."
 apt-get update
 
 echo "Installing iptables..."
-apt-get install -y iptables iftop
+apt-get install -y iptables iftop tmux vim
 
 echo "Copying $SCRIPT_SRC to /usr/local/bin/traffic_monitor.sh"
 cp "$SCRIPT_SRC" /usr/local/bin/traffic_monitor.sh

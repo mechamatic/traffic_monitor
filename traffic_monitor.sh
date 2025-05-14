@@ -101,7 +101,7 @@ while true; do
   chown "$LOG_USER":"$LOG_USER" "$LOG_FILE"
 
   reset_counters
-  sleep 60
+  sleep 3600
 done
 
 LOGROTATE_CONF="/etc/logrotate.d/traffic_monitor"
