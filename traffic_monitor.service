@@ -1,0 +1,16 @@
+[Unit]
+Description=Network Traffic Monitoring Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/traffic_monitor.sh <NetworkInterface> <LogUser>
+Restart=always
+User=root
+# Use ExecStartPre to create logs directory owned by <LogUser>
+ExecStartPre=/bin/mkdir -p /home/<LogUser>/traffic_logs
+ExecStartPre=/bin/chown -R <LogUser>:<LogUser> /home/<LogUser>/traffic_logs
+
+[Install]
+WantedBy=multi-user.target
+
